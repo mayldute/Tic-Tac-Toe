@@ -1,37 +1,36 @@
-Этот проект — консольная версия классической игры "Крестики-нолики" для двух игроков. Игра проходит на поле 3×3 и заканчивается победой одного из игроков или ничьей.
+This project is a console version of the classic "Tic-Tac-Toe" game for two players. The game is played on a 3x3 grid and ends with one player winning or a draw.
 
-**Как играть**
+**How to Play:**
 
-Запустите скрипт, и на экране появится игровое поле.
+Run the script, and the game board will appear on the screen.
 
-Игроки по очереди вводят координаты хода (номер строки и номер столбца от 0 до 2).
+Players take turns entering the coordinates of their move (row number and column number from 0 to 2).
 
-Игра продолжается до тех пор, пока:
+The game continues until:
+One player aligns three symbols (X or O) in a row, column, or diagonal — victory!
 
-Один из игроков не выстроит три символа (X или O) в ряд, столбец или по диагонали — победа!
+All cells on the board are filled — draw.
 
-Все клетки поля не будут заполнены — ничья.
+**Code Structure:**
 
-**Устройство кода**
+playing_field – The 3x3 game board, initially filled with "-".
 
-playing_field — игровое поле размером 3×3, заполненное -.
+field() – Displays the current state of the game board in the console.
 
-field() — выводит текущее состояние игрового поля в консоль.
+win_check() – Checks if any player has won (horizontal, vertical, or diagonal lines).
 
-win_check() — проверяет, выиграл ли кто-то (горизонтальные, вертикальные и диагональные линии).
+**Main Game Loop:**
 
-Основной игровой цикл:
+Asks for the move coordinates from the current player (X or O).
 
-Запрашивает координаты хода у текущего игрока (X или O).
+Validates the input and checks if the cell is free.
 
-Проверяет корректность ввода и свободна ли клетка.
+Records the move and updates the board.
 
-Записывает ход и обновляет поле.
+Checks for a winner.
 
-Проверяет победителя.
+Switches to the next player's turn.
 
-Меняет ход на другого игрока.
-
-**Требования**
+**Requirements:**
 
 Python 3.x
