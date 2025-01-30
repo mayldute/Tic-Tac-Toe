@@ -4,6 +4,7 @@ step = 0
 char = 'x'
 
 def field():
+    """Displays the playing field"""
     print('   0  1  2')
     for i, row in enumerate(playing_field):
         print(i, end=' ')
@@ -11,6 +12,7 @@ def field():
     return row
 
 def win_check():
+    """Checks the playing field for a win"""
     row_temp = []
     count = [0, 0, 0]
     
@@ -38,6 +40,7 @@ def win_check():
     return False
     
 while ' - ' in field():
+    """Main game loop"""
     row_input = input(f'Введите номер строки для игрока {char} (от 0 до 2): ') 
     column_input = input(f'Введите номер колонки для игрока {char} (от 0 до 2): ')
     
