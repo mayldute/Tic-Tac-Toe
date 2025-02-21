@@ -41,27 +41,30 @@ def win_check():
     
 while ' - ' in field():
     """Main game loop"""
-    row_input = input(f'Введите номер строки для игрока {char} (от 0 до 2): ') 
-    column_input = input(f'Введите номер колонки для игрока {char} (от 0 до 2): ')
+    row_input = input(f'Enter the row number for player {char} (from 0 to 2): ')
+    column_input = input(f'Enter the column number for player {char} (from 0 to 2): ')
     
     if row_input in ['0', '1', '2'] and column_input in ['0', '1', '2']:
         if playing_field[int(row_input)][int(column_input)] != ' - ':
-            print('Занято!')
+            print('Occupied!')
         else:
             playing_field[int(row_input)][int(column_input)] = f' {char} ' 
             
             if win_check():
                 field()
-                print(f'Выиграл {char}!')
+                print(f'Player {char} wins!')
                 break 
             else:
-                print('Ничья!')
+                if step == 8:
+                    field()
+                    print('Draw!')
+                    break
             
             step += 1
             char = 'o'
                        
     else:
-        print('Ошибка ввода. Повторите попытку.')
+        print('Input error. Please try again.')
     
     if step > 1:
         step = 0
