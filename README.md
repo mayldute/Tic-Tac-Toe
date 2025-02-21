@@ -46,6 +46,7 @@ Enter the column number for player x (from 0 to 2): 0
 0  x  -  - 
 1  -  -  - 
 2  -  -  - 
+```
 
 ## Error Handling
 
