@@ -1,36 +1,60 @@
-This project is a console version of the classic "Tic-Tac-Toe" game for two players. The game is played on a 3x3 grid and ends with one player winning or a draw.
+# Tic-Tac-Toe Game
 
-**How to Play:**
+This project implements a simple command-line Tic-Tac-Toe game for two players. The game allows players to take turns and place their marks ('x' or 'o') on a 3x3 grid. The game checks for a win or a draw after each move.
 
-Run the script, and the game board will appear on the screen.
+## Features
 
-Players take turns entering the coordinates of their move (row number and column number from 0 to 2).
+The game provides the following features:
 
-The game continues until:
-One player aligns three symbols (X or O) in a row, column, or diagonal — victory!
+- Displaying the playing field.
+- Allowing players to take turns and place their marks.
+- Checking for a win or a draw after each move.
+- Handling invalid inputs and occupied cells.
 
-All cells on the board are filled — draw.
+## Technologies
 
-**Code Structure:**
+- **Python** – Programming language used for the game.
 
-playing_field – The 3x3 game board, initially filled with "-".
+## How to Play
 
-field() – Displays the current state of the game board in the console.
+1. Run the game script:
+    ```sh
+    python game.py
+    ```
 
-win_check() – Checks if any player has won (horizontal, vertical, or diagonal lines).
+2. Follow the on-screen instructions to enter the row and column numbers for your move.
 
-**Main Game Loop:**
+3. The game will display the updated playing field after each move and announce the winner or a draw when the game ends.
 
-Asks for the move coordinates from the current player (X or O).
+## Game Logic
 
-Validates the input and checks if the cell is free.
+- The game uses a 3x3 grid represented by a list of lists.
+- Players take turns to place their marks ('x' or 'o') on the grid.
+- The game checks for a win by evaluating rows, columns, and diagonals.
+- The game ends when a player wins or when all cells are occupied, resulting in a draw.
 
-Records the move and updates the board.
+## Example
 
-Checks for a winner.
+```sh
+   0  1  2
+0  -  -  - 
+1  -  -  - 
+2  -  -  - 
+Enter the row number for player x (from 0 to 2): 0
+Enter the column number for player x (from 0 to 2): 0
+   0  1  2
+0  x  -  - 
+1  -  -  - 
+2  -  -  - 
 
-Switches to the next player's turn.
+## Error Handling
 
-**Requirements:**
+- **Invalid Input**: If the player enters an invalid row or column number, the game will prompt the player to try again.
+- **Occupied Cell**: If the player tries to place a mark on an occupied cell, the game will inform the player and prompt them to choose another cell.
 
-Python 3.x
+## How to Contribute
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and push the branch to your fork.
+4. Create a pull request with a description of your changes.
